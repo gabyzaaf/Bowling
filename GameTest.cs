@@ -17,14 +17,14 @@ namespace Bowling
         {
             this.frameList.Add(new Frame());
             this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
-            //this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
+            this.frameList.Add(new Frame());
 
         }
 
@@ -46,7 +46,7 @@ namespace Bowling
         }
 
 
-        /*
+        
         [Test]
         public void Should_Add_A_Strick_To_A_Game()
         {
@@ -67,13 +67,17 @@ namespace Bowling
             game.Launch(10);
             game.Launch(3);
             game.Launch(5);
-            Check.That(game.Score()).IsEqualTo(138);
+            Check.That(game.Score()).IsEqualTo(127);
         }
-        */
+        
         [Test]
         public void Should_Add_Multiple_Frame_With_One_Strick()
         {
-            var game = new Game(frameList);
+            List<Frame> frames = new List<Frame>();
+            frames.Add(new Frame());
+            frames.Add(new Frame());
+            frames.Add(new Frame());
+            var game = new Game(frames);
             game.Launch(10);
             game.Launch(2);
             game.Launch(4);
