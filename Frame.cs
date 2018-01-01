@@ -62,5 +62,10 @@ namespace Bowling
         {
             return this.secondScore;
         }
+
+        public override string ToString()
+        {
+            return $"FirstScore --> {this.firstScore} - SecondScore {this.secondScore}";
+        }
     }
 }

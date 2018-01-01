@@ -49,12 +49,16 @@ namespace Bowling
                         if (currentFrame.IsStrick() && i+1 < frameList.Count)
                         {
                             var next = frameList[i + 1];
-                            totalScore += next.ObtainScoreForTheFirst();
+                            totalScore += (currentFrame.ObtainFrameScore()*2)+next.ObtainScoreForTheFirst();
                         }
-                        totalScore += (currentFrame.ObtainFrameScore()*2);
+                        else
+                        {
+                            totalScore += ((currentFrame.ObtainFrameScore()*2));
+                        }
+                        
                     }else if (lastFrame.IsSpare())
                     {
-                        totalScore += (currentFrame.ObtainScoreForTheFirst()*2) + currentFrame.ObtainScoreForTheSecond();
+                        totalScore += (currentFrame.ObtainFrameScore()) + currentFrame.ObtainScoreForTheFirst();
                     }
                     else
                     {

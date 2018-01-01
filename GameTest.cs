@@ -67,7 +67,7 @@ namespace Bowling
             game.Launch(10);
             game.Launch(3);
             game.Launch(5);
-            Check.That(game.Score()).IsEqualTo(127);
+            Check.That(game.Score()).IsEqualTo(148);
         }
         
         [Test]
@@ -101,6 +101,22 @@ namespace Bowling
             Check.That(game.Score()).IsEqualTo(42);
         }
 
-        
+        [Test]
+        public void Should_Add_Multiple_Strick()
+        {
+            List<Frame> frames = new List<Frame>();
+            frames.Add(new Frame());
+            frames.Add(new Frame());
+            frames.Add(new Frame());
+
+            var game = new Game(frames);
+            game.Launch(10);
+            game.Launch(10);
+            game.Launch(5);
+            game.Launch(2);
+            Check.That(game.Score()).IsEqualTo(49);
+        }
+
+
     }
 }
